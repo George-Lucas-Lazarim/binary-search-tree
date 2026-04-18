@@ -21,5 +21,6 @@ struct treeNode* deleteNode (struct treeNode* root, int data);
 void printTreeNode (struct treeNode* root);
 void printTree (struct treeNode* root);
 void printTreeLevel (struct treeNode* root);
+int getTreeHeight (struct treeNode* root);
 
 #endif

@@ -144,3 +144,12 @@ void printTreeLevel (struct treeNode* root) {
         level++;
     }
 }
+
+int getTreeHeight (struct treeNode* root) {
+    if (root == NULL) return 0;
+
+    int leftHeight = getTreeHeight(root->left);
+    int rightHeight = getTreeHeight(root->right);
+
+    return (leftHeight > rightHeight ? leftHeight : rightHeight) + 1;
+}
