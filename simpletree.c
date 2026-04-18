@@ -28,7 +28,7 @@ int main() {
     printf("\nLowest value of the tree: %d", minTree(tree));
     printf("\nGreater value of the tree: %d", maxTree(tree));
 
-    printf("\nEnter a number to delete it: ");
+    printf("\n\nEnter a number to delete it: ");
     scanf("%d", &n);
     tree = deleteNode(tree, n);
     printTreeLevel(tree);
