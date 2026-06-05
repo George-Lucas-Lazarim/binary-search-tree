@@ -1,5 +1,5 @@
-#ifndef TREE_H
-#define TREE_H
+#ifndef SEARCHTREE_H
+#define SEARCHTREE_H
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,4 +1,4 @@
-#include "tree.h"
+#include "searchtree.h"
 #include "queue.h"
 
 struct treeNode* initNode (int data) {

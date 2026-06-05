@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "tree.h"
+#include "searchtree.h"
 
 struct queueNode {
     struct treeNode* data;
