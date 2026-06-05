@@ -5,22 +5,22 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-struct treeNode {
+struct searchTreeNode {
     int data;
-    struct treeNode* left;
-    struct treeNode* right;
+    struct searchTreeNode* left;
+    struct searchTreeNode* right;
 };
 
-struct treeNode* initNode (int data);
-struct treeNode* addData (struct treeNode* root, int data);
-bool searchData (struct treeNode* root, int data);
-struct treeNode* deleteTree (struct treeNode* root);
-int maxTree (struct treeNode* root);
-int minTree (struct treeNode* root);
-struct treeNode* deleteNode (struct treeNode* root, int data);
-void printTreeNode (struct treeNode* root);
-void printTree (struct treeNode* root);
-void printTreeLevel (struct treeNode* root);
-int getTreeHeight (struct treeNode* root);
+struct searchTreeNode* initNode (int data);
+struct searchTreeNode* addData (struct searchTreeNode* root, int data);
+bool searchData (struct searchTreeNode* root, int data);
+struct searchTreeNode* deleteTree (struct searchTreeNode* root);
+int maxTree (struct searchTreeNode* root);
+int minTree (struct searchTreeNode* root);
+struct searchTreeNode* deleteNode (struct searchTreeNode* root, int data);
+void printTreeNode (struct searchTreeNode* root);
+void printTree (struct searchTreeNode* root);
+void printTreeLevel (struct searchTreeNode* root);
+int getTreeHeight (struct searchTreeNode* root);
 
 #endif

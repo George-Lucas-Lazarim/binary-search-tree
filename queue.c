@@ -3,9 +3,9 @@
 struct queueNode* front = NULL;
 struct queueNode* rear = NULL;
 
-void addQueueNode (struct treeNode* treeNode) {
+void addQueueNode (struct searchTreeNode* searchTreeNode) {
     struct queueNode* newNode = (struct queueNode*) malloc (sizeof(struct queueNode));
-    newNode->data = treeNode;
+    newNode->data = searchTreeNode;
     newNode->next = NULL;
 
     if (front == NULL) {
@@ -16,11 +16,11 @@ void addQueueNode (struct treeNode* treeNode) {
     }
 }
 
-struct treeNode* removeQueueNode () {
+struct searchTreeNode* removeQueueNode () {
     if (front == NULL) return NULL;
 
     struct queueNode* freeNode = front;
-    struct treeNode* data = front->data;
+    struct searchTreeNode* data = front->data;
 
     front = front->next;
     if (front == NULL) rear = NULL;

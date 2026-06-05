@@ -6,15 +6,15 @@
 #include "searchtree.h"
 
 struct queueNode {
-    struct treeNode* data;
+    struct searchTreeNode* data;
     struct queueNode* next;
 };
 
 extern struct queueNode* front;
 extern struct queueNode* rear;
 
-void addQueueNode (struct treeNode* treeNode);
-struct treeNode* removeQueueNode ();
+void addQueueNode (struct searchTreeNode* searchTreeNode);
+struct searchTreeNode* removeQueueNode ();
 int getQueueSize ();
 
 #endif

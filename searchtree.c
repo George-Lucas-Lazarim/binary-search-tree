@@ -1,8 +1,8 @@
 #include "searchtree.h"
 #include "queue.h"
 
-struct treeNode* initNode (int data) {
-    struct treeNode* newNode = (struct treeNode*) malloc (sizeof(struct treeNode));
+struct searchTreeNode* initNode (int data) {
+    struct searchTreeNode* newNode = (struct searchTreeNode*) malloc (sizeof(struct searchTreeNode));
     newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
@@ -10,11 +10,11 @@ struct treeNode* initNode (int data) {
     return newNode;
 }
 
-struct treeNode* addData (struct treeNode* root, int data) {
+struct searchTreeNode* addData (struct searchTreeNode* root, int data) {
     if (root == NULL) return initNode(data);
 
-    struct treeNode* currentNode;
-    struct treeNode* tempNode = root;
+    struct searchTreeNode* currentNode;
+    struct searchTreeNode* tempNode = root;
 
     while (tempNode != NULL) {
         currentNode = tempNode;
@@ -28,7 +28,7 @@ struct treeNode* addData (struct treeNode* root, int data) {
     return root;
 }
 
-bool searchData (struct treeNode* root, int data) {
+bool searchData (struct searchTreeNode* root, int data) {
     while (root != NULL) {
         if (root->data == data) return true;
         if (root->data <= data) root = root->right;
@@ -38,7 +38,7 @@ bool searchData (struct treeNode* root, int data) {
     return false;
 }
 
-struct treeNode* deleteTree (struct treeNode* root) {
+struct searchTreeNode* deleteTree (struct searchTreeNode* root) {
     if (root == NULL) return NULL;
 
     deleteTree(root->left);
@@ -48,7 +48,7 @@ struct treeNode* deleteTree (struct treeNode* root) {
     return NULL;
 }
 
-int maxTree (struct treeNode* root) {
+int maxTree (struct searchTreeNode* root) {
     if (root == NULL) {
         printf("Empty!");
         return -1;
@@ -58,7 +58,7 @@ int maxTree (struct treeNode* root) {
     return root->data;
 }
 
-int minTree (struct treeNode* root) {
+int minTree (struct searchTreeNode* root) {
     if (root == NULL) {
         printf("Empty!");
         return -1;
@@ -68,18 +68,18 @@ int minTree (struct treeNode* root) {
     return root->data;
 }
 
-struct treeNode* deleteNode (struct treeNode* root, int data) {
+struct searchTreeNode* deleteNode (struct searchTreeNode* root, int data) {
     if (root == NULL) return NULL;
 
     if (data < root->data) root->left = deleteNode(root->left, data);
     else if (data > root->data) root->right = deleteNode(root->right, data);
     else {
         if (root->left == NULL) {
-            struct treeNode* tempNode = root->right;
+            struct searchTreeNode* tempNode = root->right;
             free(root);
             return tempNode;
         } else if (root->right == NULL) {
-            struct treeNode* tempNode = root->left;
+            struct searchTreeNode* tempNode = root->left;
             free(root);
             return tempNode;
         } else {
@@ -92,7 +92,7 @@ struct treeNode* deleteNode (struct treeNode* root, int data) {
     return root;
 }
 
-void printTreeNode (struct treeNode* root) {
+void printTreeNode (struct searchTreeNode* root) {
     if (root == NULL) return;
 
     printf("\n%d: ", root->data);
@@ -108,7 +108,7 @@ void printTreeNode (struct treeNode* root) {
     }
 }
 
-void printTree (struct treeNode* root) {
+void printTree (struct searchTreeNode* root) {
     if (root == NULL) return;
 
     printTreeNode(root);
@@ -116,7 +116,7 @@ void printTree (struct treeNode* root) {
     printTree(root->right);
 }
 
-void printTreeLevel (struct treeNode* root) {
+void printTreeLevel (struct searchTreeNode* root) {
     if (root == NULL) return;
 
     addQueueNode(root);
@@ -128,7 +128,7 @@ void printTreeLevel (struct treeNode* root) {
         printf("%d: ", level);
 
         while(nodeCount > 0) {
-            struct treeNode* currentNode = removeQueueNode();
+            struct searchTreeNode* currentNode = removeQueueNode();
             printf("%d ", currentNode->data);
 
             if (currentNode->left != NULL) {
@@ -145,7 +145,7 @@ void printTreeLevel (struct treeNode* root) {
     }
 }
 
-int getTreeHeight (struct treeNode* root) {
+int getTreeHeight (struct searchTreeNode* root) {
     if (root == NULL) return 0;
 
     int leftHeight = getTreeHeight(root->left);

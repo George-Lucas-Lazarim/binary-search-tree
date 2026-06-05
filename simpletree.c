@@ -5,7 +5,7 @@ int main() {
     int n;
 
     srand(time(NULL));
-    struct treeNode* tree = NULL;
+    struct searchTreeNode* tree = NULL;
 
     printf("Enter the number of random elements you want to insert into the tree: ");
     scanf("%d", &n);
